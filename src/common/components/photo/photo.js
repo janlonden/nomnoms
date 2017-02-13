@@ -5,7 +5,7 @@ import styles from './photo.styl'
 
 const Photo = ({photo, what}) => photo
   ? <div styleName="root" style={{
-      backgroundImage: `url('http://londen.se/nomnoms/photos/${photo}')`
+      backgroundImage: `url('https://londen.se/nomnoms/photos/${photo}')`
     }}>
     </div>
   : <div styleName="root no-photo"></div>

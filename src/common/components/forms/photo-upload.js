@@ -45,7 +45,7 @@ const PhotoUpload = ({
 
     dispatch(`set_${newOrUpdate}_${what}_uploading`, true)
 
-    req.post('http://londen.se/nomnoms/photo-upload.php', payload)
+    req.post('https://londen.se/nomnoms/photo-upload.php', payload)
       .then(res => {
         console.log(res)
 

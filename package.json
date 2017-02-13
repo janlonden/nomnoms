@@ -13,8 +13,7 @@
     "webpack": "webpack",
     "browser-sync": "babel-register browser-sync",
     "build": "bnr build",
-    "express:prod": "bnr express:prod",
-    "remove-node_modules": "rm -rf node_modules"
+    "express:prod": "bnr express:prod"
   },
   "betterScripts": {
     "express:dev": {
