@@ -1,0 +1,25 @@
+.comment-heading
+  background orange
+  border-radius 100%
+  position absolute
+  top 0
+  left 50%
+  transform translate(-50%, -50%)
+  wh(7rem)
+  z-index 1
+
+  h3
+    color white
+    font(logoFont)
+    fs(1.25)
+    left 50%
+    line-height 1
+    position absolute
+    text-align center
+    top 50%
+    transform translate(-50%, -50%)
+    breakWord()
+
+@media (min-width: 699px)
+  .comment-heading
+    left (100 / 3)%

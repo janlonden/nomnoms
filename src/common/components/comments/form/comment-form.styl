@@ -1,0 +1,103 @@
+@import '../../../styles/import'
+
+@import '../../../styles/classes/button'
+@import '../../../styles/classes/comment-heading'
+@import '../../../styles/classes/forms/heading'
+@import '../../../styles/classes/forms/placeholder'
+@import '../../../styles/classes/forms/submit-section'
+
+.new-comment-form
+  .comment-form
+    background purple2
+    position relative
+    padding (spacing)vw
+
+.update-comment-form
+  width 100%
+  max-width textWidth
+
+  .text
+    background beige3
+    padding (spacing)vw
+
+.comment-form-element
+  max-width textWidth
+
+.placeholder
+  &:after
+    color beige
+    content 'Receptet bevöver mer svartpeppar!'
+
+.error
+  color orange
+  margin-bottom 2rem
+  font(altFont)
+
+.submit-section
+  .new
+    background lighten(purple2, 4%)
+
+    &:after
+      background orange
+
+    span
+      &:before
+        icon('plane', 'light')
+
+  .update
+    span
+      &:before
+        icon('check', 'light')
+
+  .requesting
+    background orange
+
+    &:after
+      display none
+
+    span
+      &:before
+        icon('timeglass', 'light')
+
+.update-comment-form
+.submit-section
+  .requesting
+    background cyan
+
+    &:after
+      display none
+
+    span
+      &:before
+        icon('timeglass', 'light')
+
+.comment-heading
+  background cyan
+  left 0
+
+@media (max-width: 699px)
+  .comment-form
+    &.no-comments
+      padding-top 4rem
+
+  .comment-heading
+    left 50%
+
+@media (min-width: 699px)
+  .new-comment-form
+    display flex
+    justify-content flex-end
+    width 100%
+
+    .comment-form
+      flex 0 0 (100 / 3 * 2)%
+
+@media (min-width: 899px)
+  .update-comment-form
+    .text
+      padding 4rem
+
+@media (min-width: 1279px)
+  .new-comment-form
+    .comment-form
+      padding 6rem

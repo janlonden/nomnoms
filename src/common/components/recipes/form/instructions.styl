@@ -1,0 +1,62 @@
+@import '../../../styles/import'
+
+@import '../../../styles/classes/button'
+@import '../../../styles/classes/forms/add-field'
+@import '../../../styles/classes/forms/button'
+@import '../../../styles/classes/forms/edit-nav'
+@import '../../../styles/classes/forms/header'
+@import '../../../styles/classes/forms/heading'
+@import '../../../styles/classes/forms/label'
+@import '../../../styles/classes/forms/placeholder'
+@import '../../../styles/classes/forms/recipe-error'
+@import '../../../styles/classes/forms/section'
+
+.root
+  background beige
+
+.instructions
+  width 100%
+
+.instruction
+  position relative
+  width auto
+  margin-bottom (spacing)vw
+
+.placeholder
+  &:after
+    content 'Lägg till svartpeppar.'
+
+.input
+  width auto
+
+.disabled
+  opacity .5
+
+.sort-up
+  &:after
+    icon('up', 'dark')
+
+.sort-down
+  &:after
+    icon('down', 'dark')
+
+.remove
+  &:after
+    icon('x', 'dark')
+
+@media (max-width: 449px)
+  .edit-nav
+    justify-content flex-end
+    margin-top -1rem
+    margin-bottom 1rem
+
+@media (min-width: 449px)
+  .instruction
+    margin-bottom 3rem
+
+  .edit-nav
+    height 3rem
+    padding-right .5rem
+    position absolute
+    right -1.5rem
+    top -0.575rem

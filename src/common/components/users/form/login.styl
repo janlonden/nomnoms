@@ -1,0 +1,26 @@
+@import '../../../styles/import'
+
+@import '../../../styles/classes/button'
+@import '../../../styles/classes/forms/heading'
+@import '../../../styles/classes/forms/input-text'
+@import '../../../styles/classes/forms/label'
+@import '../../../styles/classes/forms/submit-section'
+@import '../../../styles/classes/forms/user-error'
+
+@import '../../../styles/classes/forms/user'
+
+.submit-section
+  .button
+    span
+      &:before
+        icon('login', 'light')
+
+  .requesting
+    background cyan
+
+    &:after
+      display none
+
+    span
+      &:before
+        icon('timeglass', 'light')

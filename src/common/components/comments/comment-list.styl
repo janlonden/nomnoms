@@ -1,0 +1,106 @@
+@import '../../styles/import'
+
+@import '../../styles/classes/author-and-date'
+@import '../../styles/classes/button'
+@import '../../styles/classes/comment-heading'
+@import '../../styles/classes/edit-nav'
+
+.root
+  position relative
+
+.text
+  background beige3
+  padding (spacing)vw
+  position relative
+
+.arrow
+  position absolute
+  wh(0)
+
+@media (max-width: 699px)
+  .arrow
+    border-right .75rem solid transparent
+    border-left .75rem solid transparent
+    border-top .75rem solid beige3
+    left 50%
+    bottom -.75rem
+    transform translateX(-50%)
+
+  .edit-nav
+    justify-content center
+
+  .meta
+    padding (spacing)vw
+
+@media (min-width: 699px)
+  .comment
+    display flex
+
+  .text
+    flex-basis (100 / 3 * 2)%
+    order 1
+
+  .edit-nav
+    margin-top 1rem
+    margin-left -1rem
+
+  .content
+    max-width textWidth
+
+  .arrow
+    border-bottom .75rem solid transparent
+    border-right .75rem solid beige3
+    border-top .75rem solid transparent
+    top 50%
+    left -.75rem
+    transform translateY(-50%)
+
+  .author-and-date
+    display flex
+    flex-flow column nowrap
+    justify-content center
+
+  .meta
+    flex-basis (100 / 3)%
+    padding-right (spacing)vw
+    padding-left (spacing * .5)vw
+
+@media (max-width: 1023px)
+  .comment
+    &:first-of-type
+      .text
+        padding-top 6rem
+
+  .photo
+    margin-bottom 1rem
+
+  .meta
+    center(text: true)
+
+@media (min-width: 699px) and (max-width: 1023px)
+  .meta
+    align-items flex-end
+
+  .comment
+    &:first-of-type
+      .meta
+        padding-top 6rem
+
+@media (min-width: 1023px)
+  .photo
+    order 1
+
+  .author-and-date
+    align-items flex-end
+    margin-right 2rem
+
+  .meta
+    align-items center
+    display flex
+    justify-content flex-end
+    padding-right (spacing * .5)vw
+    text-align right
+
+@media (min-width: 1279px)
+  .text
+    padding 6rem

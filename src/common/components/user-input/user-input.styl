@@ -1,0 +1,39 @@
+@import '../../styles/import'
+
+.root
+  background rgba(purple2, .9)
+  display block
+  left 0
+  overflow auto
+  position fixed
+  top 0
+  wh(100%)
+  z-index inputIndex
+  padding-top 6rem
+  padding-bottom 2rem
+
+.user-input-section
+  center()
+  min-height 100%
+
+.close
+  position absolute
+  right 2rem
+  top @right
+  wh(28px)
+
+  &:after
+    content ''
+    display block
+    wh(100%)
+    icon('x-big', 'light')
+
+@media (min-width: 1023px)
+  .close
+    right 4rem
+    top @right
+
+@media (min-width: 1139px)
+  .root
+    padding-top 2rem
+    padding-bottom @padding-top

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="12.4"
+   height="20"
+   viewBox="0 0 12.4 20"
+   id="svg4382"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="italic-light.svg">
+  <defs
+     id="defs4384" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="16"
+     inkscape:cx="-8.791451"
+     inkscape:cy="8.130308"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     units="px"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:object-nodes="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid8753" />
+  </sodipodi:namedview>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-1032.3622)">
+    <path
+       inkscape:connector-curvature="0"
+       id="path8151"
+       d="m 5.627586,1049.3691 q -0.2344827,0.9103 -0.2344827,1.3655 0,0.4138 0.1793103,0.6345 0.1931035,0.2207 0.5931035,0.3172 0.4,0.083 1.1310344,0.1104 l -0.1103448,0.5655 q -1.3241379,-0.083 -3.5862069,-0.083 -2.3586206,0 -3.59999994901161,0.083 L 0.15172399,1051.7967 q 0.99310341,-0.041 1.48965521,-0.2207 0.4965517,-0.1793 0.7862068,-0.6621 0.3034483,-0.4965 0.5793104,-1.5448 l 3.7241379,-14.0138 q 0.2344828,-0.8966 0.2344828,-1.3517 0,-0.4276 -0.1931035,-0.6483 -0.1931034,-0.2207 -0.5931034,-0.3035 -0.3862069,-0.096 -1.1172414,-0.1241 l 0.137931,-0.5655 q 1.1586207,0.083 3.5862069,0.083 2.2758623,0 3.6137933,-0.083 l -0.137931,0.5655 q -1.034483,0.041 -1.544828,0.2207 -0.496552,0.1793 -0.7999998,0.6621 -0.2896552,0.4827 -0.5655172,1.5448 l -3.724138,14.0138 z"
+       style="fill:#f2f1ef;fill-opacity:1" />
+  </g>
+</svg>

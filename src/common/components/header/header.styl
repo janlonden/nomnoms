@@ -1,0 +1,113 @@
+@import '../../styles/import'
+
+.root
+  background white
+  z-index headerIndex
+
+.logo
+  font(logoFont)
+  align-items center
+  display flex
+  line-height 1
+
+  &:before
+    background-position center
+    background-repeat no-repeat
+    background-size cover
+    content ''
+    display block
+    svg('logo')
+    margin-right 1rem
+    wh(2rem)
+    flex-shrink 0
+
+.responsive
+  position fixed
+  left 0
+  top 0
+  wh(100%)
+  background white
+  center()
+  display none
+  overflow auto
+
+  &.active
+    display block
+
+  .inner
+    center()
+    min-height 100%
+
+  .avatar
+    margin-bottom 2rem
+
+.open-responsive
+  display none
+  position fixed
+  right 2rem
+  top @right
+  z-index 3
+  wh(28px)
+
+  &.close
+    &:after
+      icon('x-big', 'dark')
+
+  &:after
+    content ''
+    display block
+    wh(100%)
+    icon('nav', 'dark')
+
+  &.visible
+    display inline-block
+
+@media (max-width: 375px)
+  .logo
+    fs(1.5)
+
+@media (min-width: 375px)
+  .logo
+    fs(2)
+
+@media (max-width: 567px)
+  .root
+    padding 2rem
+    padding-bottom 1rem
+
+  .logo
+    margin-bottom 1rem
+
+@media (min-width: 567px)
+  .root
+    display flex
+    flex-shrink 0
+    height 6rem
+    align-items center
+    justify-content space-between
+    position relative
+
+  .logo
+    padding-left 2rem
+
+@media (min-width: 567px) and (max-width: 1023px)
+  .root
+    padding-right 6rem
+
+@media (min-width: 1023px)
+  .nav
+    height 100%
+
+  .inner
+    align-items center
+    display flex
+    height 100%
+
+  .avatar
+    background white
+    center()
+    height 100%
+    width 6rem
+
+    > div
+      wh(4rem)

@@ -1,0 +1,138 @@
+@import '../../styles/import'
+
+@import '../../styles/classes/author-and-date'
+@import '../../styles/classes/button'
+@import '../../styles/classes/center'
+@import '../../styles/classes/edit-nav'
+
+.recipe
+  background white
+
+.section
+  breakWord()
+  padding (spacing)vw
+
+  &.recipe-photo
+    display flex
+    flex-grow 1
+    padding 0
+
+.title
+  color white
+  background orange
+
+.meta
+  background beige2
+
+.heading
+  fs(2)
+  line-height 1.6
+  margin-bottom 1rem
+
+.sub-heading
+  color brownish2
+  fs(1.5)
+  margin-bottom 2rem
+  font(logoFont)
+
+.author-photo
+  margin-bottom 2rem
+
+.edit-nav
+  margin-top 1rem
+
+.ingredients
+  li
+    margin-bottom 1rem
+
+    &:last-of-type
+      margin-bottom 0
+
+    b
+      font-weight 400
+      margin-right .5rem
+
+.instructions
+  li
+    counter-increment step-counter
+    margin-bottom 2rem
+
+    &:before
+      center(text: true)
+      content counter(step-counter)
+      font(logoFont)
+      line-height 1
+      float left
+      wh(2rem)
+      padding .5rem
+      margin-right 1.5rem
+      margin-bottom 1rem
+      background beige2
+      border-radius 100%
+
+@media (max-width: 567px)
+  .description
+  .ingredients
+    padding-bottom 0
+
+@media (min-width: 567px)
+  .recipe
+    display flex
+    flex-flow row wrap
+    position relative
+
+  .header
+    display flex
+    flex-wrap wrap
+    width 100%
+
+    .section
+      justify-content space-around
+
+  .section
+    flex 1 0 50%
+
+  .heading
+    fs(2.5)
+
+@media (min-width: 567px) and (max-width: 899px)
+  .instructions
+    padding-top 0
+
+@media (min-width: textWidth) and (max-width: 1023px)
+  .instructions
+    margin 0 auto
+    max-width textWidth
+
+@media (max-width: 899px)
+  .section
+    breakWord()
+
+    &.recipe-photo
+      height 40vw
+      min-height 15rem
+
+  .instructions
+    padding-bottom 5rem
+
+@media (min-width: 899px)
+  .section
+    flex 1 0 (100 / 3)%
+    padding (spacing * .6)vw
+
+  .description
+    order 0
+
+  .instructions
+    order 1
+
+    li
+      &:before
+        left -2.5rem
+
+  .ingredients
+    order 2
+
+@media (min-width: 1279px)
+  .section
+    padding 6rem

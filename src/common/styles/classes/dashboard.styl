@@ -1,0 +1,47 @@
+.section-nav
+  margin-bottom 2rem
+
+.update-user-link
+.recipes-link
+.comments-link
+  display block
+  color white
+  font(altFont)
+  transition opacity .2s ease
+  opacity .6
+  padding .5rem
+  fs(1.5)
+  text-align center
+  line-height 1.25
+
+  &:hover
+  &.active
+    opacity 1
+
+.heading
+  color white
+  margin-bottom 2rem
+
+.no-items
+  h2
+    font(altFont)
+    fs(2, 300)
+    line-height 1.5
+
+.search-sort
+  width 100%
+  max-width 15rem
+
+.search
+  position relative
+  margin-bottom 2rem
+
+.input-text
+  fs(1.2)
+  placeholder(white)
+  border-bottom 1px solid rgba(white, .2)
+  color white
+
+.clear-search
+  &:before
+    icon('x-big', 'light')

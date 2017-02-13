@@ -1,0 +1,81 @@
+wh(value)
+  width value
+  height value
+
+font(font)
+  font-family font
+
+fs(size, weight = 400)
+  font-size (size)rem
+  font-weight weight
+
+icon(icon, iconColor)
+  background-position center
+  background-repeat no-repeat
+  content ''
+  display block
+  svg('icons/' + icon + '-' + iconColor)
+
+img(value)
+  background-image src('./src/images/' + value)
+
+svg(value)
+  background-image inline('./src/images/' + value + '.svg')
+
+center(text = false)
+  align-items center
+  display flex
+  flex-flow column nowrap
+  justify-content center
+
+  if text
+    text-align center
+
+buttonPadding(value)
+  padding (value)rem (value * 1.5)rem
+
+debug()
+  border 1px solid red
+
+hideText()
+  display block
+  overflow hidden
+  text-indent 200%
+  white-space nowrap
+
+unhideText()
+  overflow visible
+  text-indent 0
+  white-space normal
+
+hide()
+  border 0
+  clip rect(0, 0, 0, 0)
+  wh(1px)
+  margin -1px
+  overflow hidden
+  padding 0
+  position absolute
+
+breakWord()
+  word-break break-word
+
+noWrap()
+  white-space nowrap
+
+placeholder(arg)
+  &::-webkit-input-placeholder
+    color arg
+    opacity .5
+
+  &::-moz-placeholder
+    color arg
+    opacity .5
+
+  &:-moz-placeholder
+    color arg
+    opacity .5
+
+  &:-ms-input-placeholder
+    color arg
+    opacity .5

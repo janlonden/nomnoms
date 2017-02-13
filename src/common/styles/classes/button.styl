@@ -1,0 +1,45 @@
+.button
+  background purple2
+  border 0
+  color beige
+  display inline-block
+  overflow hidden
+  position relative
+  font(altFont)
+
+  span
+    align-items center
+    color white
+    display flex
+    line-height 1
+    padding 1.5rem
+    position relative
+    z-index 1
+    text-align left
+
+    &:before
+    &:after
+      display none
+      wh(20px)
+
+    &:before
+      margin-right 1rem
+
+    &:after
+      margin-left 1rem
+
+  &:after
+    background cyan
+    border-top-left-radius 100%
+    bottom 0
+    content ''
+    position absolute
+    right 0
+    transform translate(0, 100%)
+    transition transform .4s ease
+    wh(150%)
+
+  &:hover
+  &.active
+    &:after
+      transform translate(0, 0)

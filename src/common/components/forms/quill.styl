@@ -1,0 +1,130 @@
+@import '../../styles/import'
+
+:global #app
+  .new-comment-form
+    .ql-editor
+      background transparent
+      border-top 1px solid rgba(beige, .1)
+      color beige
+
+  .recipe-form-maker
+  .update-comment-form
+    .ql-editor
+      border-top 1px solid rgba(brownish, .1)
+
+    .ql-bold
+      svg('icons/bold-dark')
+
+    .ql-italic
+      svg('icons/italic-dark')
+
+    .ql-strike
+      svg('icons/strikethrough-dark')
+
+    .ql-underline
+      svg('icons/underline-dark')
+
+    .ql-link
+      svg('icons/link-dark')
+
+:global #app
+  .ql-toolbar
+    align-items center
+    display flex
+    left -0.5rem
+    position relative
+
+  .ql-format-button
+    background-position center
+    background-repeat no-repeat
+    cursor pointer
+    flex 0 0 auto
+    height 28px
+    opacity .5
+    transition opacity .2s ease
+
+    &:hover
+      opacity 1
+
+  .ql-bold
+    svg('icons/bold-light')
+    width (19 + 15)px
+
+  .ql-italic
+    svg('icons/italic-light')
+    width (13 + 15)px
+
+  .ql-strike
+    svg('icons/strikethrough-light')
+    width (14 + 15)px
+
+  .ql-underline
+    svg('icons/underline-light')
+    width (18 + 15)px
+
+  .ql-link
+    svg('icons/link-light')
+    width (20 + 15)px
+
+  .ql-container
+    padding 0
+
+  .ql-editor
+    background transparent
+    color brownish
+    font(defaultFont)
+    fs(1)
+    position relative
+    width 100%
+    padding-top 2rem
+    padding-bottom @padding-top
+    margin-top @padding-top
+
+  .ql-link-tooltip
+    align-items center
+    background white
+    border 0
+    display flex
+    fs(1)
+    height 3rem
+    padding 0
+    padding-right 1rem
+
+    input[type='text']
+      border 0
+      font(defaultFont)
+      height 3rem
+      line-height @height
+      max-width 16rem
+      padding 0 1rem
+      width auto
+
+    .url
+      padding 0 1rem
+
+    .title
+    span
+      display none
+
+    .change
+      // button(icon: 'pencil', iconColor: 'dark')
+
+    .remove
+      // button(icon: 'trash', iconColor: 'dark')
+
+    .done
+      // button(icon: 'check', iconColor: 'dark')
+
+    .done
+      display none
+
+    .change
+      margin-right 0
+
+    &.editing
+      .change
+      .remove
+        display none
+
+      .done
+        display inline-block

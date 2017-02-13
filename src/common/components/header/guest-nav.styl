@@ -1,0 +1,45 @@
+@import '../../styles/import'
+
+@import '../../styles/classes/button'
+
+.root
+  align-items center
+  display flex
+
+  li
+    display flex
+
+.non-responsive
+  height 100%
+
+  li
+    height @height
+
+  .button
+    height @height
+
+    span
+      height @height
+      padding-left 2rem
+      padding-right @padding-left
+
+.responsive
+  flex-flow row wrap
+  justify-content center
+
+.login
+  background lighten(beige2, 60%)
+
+  &:after
+    background white
+
+  span
+    color brownish
+
+    &:before
+      icon('login', 'dark')
+
+.register
+  span
+    &:before
+      icon('new-user', 'light')

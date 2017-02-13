@@ -1,0 +1,61 @@
+.sort
+  width 100%
+  max-width 15rem
+  position relative
+
+.open-sort-nav
+  background darken(desaturate(orange, 10%), 10%)
+  display block
+
+  &:after
+    background purple2
+
+  span
+    justify-content space-between
+    padding-top 0
+    padding-bottom @padding-top
+    height 4rem
+
+    &:after
+      icon('down', 'light')
+
+.sorting
+  background purple2
+
+  &:after
+    display none
+
+  span
+    &:after
+      icon('timeglass', 'light')
+
+.sort-nav
+  background white
+  box-shadow 0 0 1px 0 rgba(black, .2)
+  left 0
+  opacity 0
+  position absolute
+  text-align left
+  top 4rem
+  transition opacity .2s ease, visibility .2s ease
+  visibility hidden
+  width 100%
+  z-index 1
+  padding .5rem
+
+  &.active
+    opacity 1
+    visibility visible
+
+  a
+    align-items center
+    color brownish
+    display block
+    display flex
+    font(altFont)
+    line-height 1
+    padding 1rem
+
+  li:last-of-type
+    a
+      border-bottom 0

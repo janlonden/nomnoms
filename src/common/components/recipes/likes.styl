@@ -1,0 +1,47 @@
+@import '../../styles/import'
+
+.root
+  align-items center
+  color brownish
+  display flex
+  font(altFont)
+  line-height 1
+  padding 1rem
+
+  &:before
+    background-position center
+    background-repeat no-repeat
+    icon('heart', 'red')
+    transition background .1s ease
+    wh(20px)
+
+  &.link
+    &:hover
+      &:before
+        icon('heart-filled', 'red')
+
+.has-likes
+  &:before
+    margin-right .5rem
+
+.liked
+  &:before
+    icon('heart-filled', 'red')
+
+  &.recipe
+    &:before
+      icon('heart-filled', 'light')
+
+.recipe
+  color white
+
+  &:before
+    icon('heart', 'light')
+
+  &.link
+    &:hover
+      &:before
+        icon('heart-filled', 'light')
+
+.link
+  width auto

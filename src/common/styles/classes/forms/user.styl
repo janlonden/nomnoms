@@ -1,0 +1,42 @@
+.root
+  width 100%
+  max-width 25rem
+
+.form
+  width 100%
+
+.input-section
+  background beige2
+  position relative
+
+  .input-text
+    padding-left 5rem
+
+  label
+    height 5rem
+    width 5rem
+    position absolute
+    left 0
+    bottom 0
+
+    &:before
+      wh(100%)
+
+.user-section
+  label
+    &:before
+      icon('user', 'dark')
+
+.email-section
+  label
+    &:before
+      icon('envelope', 'dark')
+
+.password-section
+  label
+    &:before
+      icon('lock', 'dark')
+
+.input-text
+  height 5rem
+  padding-right 2rem

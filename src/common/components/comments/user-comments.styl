@@ -1,0 +1,62 @@
+@import '../../styles/import'
+
+@import '../../styles/classes/boxes'
+@import '../../styles/classes/button'
+@import '../../styles/classes/edit-nav'
+@import '../../styles/classes/filter'
+@import '../../styles/classes/forms/input-text'
+@import '../../styles/classes/headings'
+@import '../../styles/classes/more-link'
+@import '../../styles/classes/search'
+@import '../../styles/classes/sort-nav'
+
+@import '../../styles/classes/dashboard'
+
+.heading
+  breakWord()
+
+.filter
+  position relative
+  z-index 2
+
+.comments
+  position relative
+
+  &:before
+    content ''
+    position absolute
+    top 0
+    right 0
+    width 100%
+    height 1px
+    background beige2
+
+.comment
+  background white
+  center(text: true)
+  justify-content space-around
+
+.text
+  margin-bottom 2rem
+
+  &:before
+  &:after
+    color brownish2
+    fs(2.5)
+    line-height 0
+    position relative
+    top .75rem
+
+  &:before
+    content '“'
+    margin-right .5rem
+
+  &:after
+    content '”'
+    margin-left .5rem
+
+.date
+  color brownish2
+  display block
+  font(altFont)
+  margin-bottom 1rem

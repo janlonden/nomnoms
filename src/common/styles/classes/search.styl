@@ -1,0 +1,23 @@
+.input-text
+  font(altFont)
+  padding-right 38px
+
+.clear-search
+  center()
+  hideText()
+  opacity 0
+  position absolute
+  right 0
+  top 50%
+  transform translateY(-10%) rotate(-22.5deg)
+  transition opacity .4s ease, visibility .4s ease, transform .4s ease
+  visibility hidden
+  wh(28px)
+
+  &:before
+    wh(100%)
+
+  &.visible
+    opacity 1
+    transform translateY(-50%) rotate(0)
+    visibility visible

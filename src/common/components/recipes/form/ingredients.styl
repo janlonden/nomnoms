@@ -1,0 +1,76 @@
+@import '../../../styles/import'
+
+@import '../../../styles/classes/button'
+@import '../../../styles/classes/forms/add-field'
+@import '../../../styles/classes/forms/button'
+@import '../../../styles/classes/forms/edit-nav'
+@import '../../../styles/classes/forms/header'
+@import '../../../styles/classes/forms/input-text'
+@import '../../../styles/classes/forms/label'
+@import '../../../styles/classes/forms/recipe-error'
+@import '../../../styles/classes/forms/section'
+
+.root
+  background purple2
+
+.label
+  color beige
+
+.ingredients
+  width 100%
+  margin-bottom (spacing)vw
+
+  input:first-of-type
+    padding-right 1rem
+    flex-basis 40%
+
+  input:last-of-type
+    flex-basis 60%
+
+.ingredient
+  display flex
+
+.input-text
+  color beige
+  placeholder(beige)
+
+.sort-up
+  &:after
+    icon('up', 'light')
+
+.sort-down
+  &:after
+    icon('down', 'light')
+
+.remove
+  &:after
+    icon('x', 'light')
+
+@media (max-width: 567px)
+  .ingredient
+    flex-wrap wrap
+    border 0
+
+  .edit-nav
+    flex-basis 100%
+    display flex
+    justify-content flex-end
+    border-top 1px solid rgba(beige, .05)
+
+@media (min-width: 567px)
+  .ingredient
+    border-bottom 1px solid rgba(beige, .05)
+
+  .input-text
+    margin-right 2rem
+
+  .edit-nav
+    position relative
+    right -1rem
+
+  .error
+    border-left 1px solid rgba(beige, .1)
+
+@media (min-width: 899px)
+  .ingredients
+    margin-bottom 5rem

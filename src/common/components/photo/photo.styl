@@ -1,0 +1,19 @@
+@import '../../styles/import'
+
+.root
+  flex-grow 1
+  background-position center
+  background-repeat no-repeat
+  background-size cover
+  background-color purple
+
+.no-photo
+  &:before
+    background-position center
+    background-repeat no-repeat
+    background-size cover
+    content ''
+    display block
+    svg('no-photo')
+    opacity .5
+    wh(100%)

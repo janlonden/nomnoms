@@ -1,0 +1,24 @@
+@import '../../../styles/import'
+
+@import '../../../styles/classes/forms/header'
+@import '../../../styles/classes/forms/input-text'
+@import '../../../styles/classes/forms/label'
+@import '../../../styles/classes/forms/placeholder'
+@import '../../../styles/classes/forms/recipe-error'
+@import '../../../styles/classes/forms/section'
+
+.root
+  background beige3
+  padding-bottom (spacing * .6)vw
+
+.input
+  position relative
+  width 100%
+
+.placeholder
+  &:after
+    content 'Ett recept med lite svartpeppar.'
+
+@media (min-width: 1399px)
+  .root
+    padding-bottom 4rem

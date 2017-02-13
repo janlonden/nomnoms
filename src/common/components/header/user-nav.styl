@@ -1,0 +1,84 @@
+@import '../../styles/import'
+
+@import '../../styles/classes/button'
+
+.root
+  font(altFont)
+  position relative
+
+  .button
+    width 100%
+
+    span
+      width @width
+      color brownish
+      noWrap()
+
+  .compose
+    background orange
+
+    &:after
+      background darken(desaturate(orange, 10%), 10%)
+
+    span
+      color white
+
+      &:before
+        icon('plus', 'light')
+
+.non-responsive
+  height 100%
+
+  .open
+    background transparent
+    height @height
+
+    &:after
+      display none
+
+    span
+      text-transform capitalize
+      height @height
+
+      &:after
+        icon('down', 'dark')
+
+  .nav
+    background white
+    box-shadow 0 0 1px 0 rgba(black, .2)
+    opacity 0
+    position absolute
+    right 0
+    top 6rem
+    transition opacity .2s ease, visibility .2s ease
+    visibility hidden
+
+.responsive
+  .open
+    display none
+
+.nav
+  li
+    display flex
+
+  .dashboard
+  .logout
+    background transparent
+
+    &:after
+      background lighten(beige2, 60%)
+
+  .dashboard
+    span
+      &:before
+        icon('user', 'dark')
+
+  .logout
+    span
+      &:before
+        icon('logout', 'dark')
+
+:global .user-nav
+  &.active
+    opacity 1
+    visibility visible

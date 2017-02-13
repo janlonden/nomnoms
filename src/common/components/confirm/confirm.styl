@@ -1,0 +1,44 @@
+@import '../../styles/import'
+
+@import '../../styles/classes/button'
+
+.root
+  text-align center
+
+  p
+    fs(2, 300)
+    color beige
+    line-height 1.2
+    max-width 20rem
+    font(altFont)
+    padding 2rem
+
+.yes
+  background darken(purple2, 8%)
+
+  &:after
+    background orange
+
+  span
+    &:before
+      icon('check', 'light')
+
+.no
+  background lighten(purple2, 4%)
+
+  &:after
+    background cyan
+
+  span
+    &:before
+      icon('x', 'light')
+
+.requesting
+  background orange
+
+  &:after
+    display none
+
+  span
+    &:before
+      icon('timeglass', 'light')

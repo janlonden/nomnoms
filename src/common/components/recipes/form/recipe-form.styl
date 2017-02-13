@@ -1,0 +1,33 @@
+@import '../../../styles/import'
+
+@import '../../../styles/classes/button'
+@import '../../../styles/classes/forms/heading'
+@import '../../../styles/classes/forms/submit-section'
+
+.root
+  max-width 50rem
+  width 100%
+
+.form
+  width 100%
+
+.submit-section
+  .new
+    span
+      &:before
+        icon('plane', 'light')
+
+  .update
+    span
+      &:before
+        icon('check', 'light')
+
+  .requesting
+    background cyan
+
+    &:after
+      display none
+
+    span
+      &:before
+        icon('timeglass', 'light')

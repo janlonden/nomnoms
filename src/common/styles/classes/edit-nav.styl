@@ -1,0 +1,29 @@
+.edit-nav
+  align-items center
+  display flex
+  margin-bottom -1rem
+
+  li
+    wh(3rem)
+
+.edit
+.remove
+  display block
+  wh(100%)
+
+  &:before
+    wh(inherit)
+    opacity .6
+    transition opacity .2s ease
+
+  &:hover
+    &:before
+      opacity 1
+
+.edit
+  &:before
+    icon('check', 'dark')
+
+.remove
+  &:before
+    icon('x', 'dark')
