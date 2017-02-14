@@ -88,7 +88,7 @@
     display flex
     height 3rem
     padding 0
-    padding-right 1rem
+    box-shadow 0 0 1px 0 rgba(black, .2)
 
     input[type='text']
       font(defaultFont)
@@ -107,13 +107,26 @@
       display none
 
     .change
-      // button(icon: 'pencil', iconColor: 'dark')
+    .remove
+    .done
+      wh(3rem)
+      hideText()
+      background-position center
+      background-repeat no-repeat
+      transition opacity .2s ease
+      opacity .6
+
+      &:hover
+        opacity 1
+
+    .change
+      svg('icons/check-dark')
 
     .remove
-      // button(icon: 'trash', iconColor: 'dark')
+      svg('icons/x-dark')
 
     .done
-      // button(icon: 'check', iconColor: 'dark')
+      svg('icons/check-dark')
 
     .done
       display none
