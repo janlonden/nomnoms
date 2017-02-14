@@ -24,12 +24,6 @@ const UserNav = ({
     }, 500)
   }
 
-  const toDashboard = event => {
-    event.preventDefault()
-
-    browserHistory.push('/jag')
-  }
-
   const setInput = input => event => {
     event.preventDefault()
 
@@ -66,7 +60,6 @@ const UserNav = ({
     >
       <a
         href="#"
-        onClick={! responsive && toDashboard}
         onMouseOut={! responsive && userNavTimeout}
         onMouseOver={! responsive && setUserNavActive(true)}
         styleName="button open"

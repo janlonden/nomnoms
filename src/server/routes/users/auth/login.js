@@ -6,7 +6,7 @@ const login = ({authenticated, req, res, next, error, success, User}) => {
   const response = {
     auth: 'Redan inloggad.',
     credentials: 'Ogiltigt användarnamn eller lösenord.',
-    error: 'Kunde inte logga in.'
+    error: 'Kunde inte logga in. Försök igen senare.'
   }
 
   if (authenticated) {

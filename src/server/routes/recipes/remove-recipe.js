@@ -11,7 +11,7 @@ const removeRecipe = ({
 
   const response = {
     auth: 'Måste vara inloggad för att radera recept.',
-    error: 'Kunde inte radera recept.',
+    error: 'Kunde inte radera recept. Försök igen senare.',
     success: 'Receptet raderades.'
   }
 

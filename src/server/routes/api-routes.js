@@ -25,8 +25,6 @@ import removeRecipe from './recipes/remove-recipe'
 import updateComment from './comments/update-comment'
 import updateRecipe from './recipes/update-recipe'
 import updateUser from './users/update-user'
-import uploadRecipePhoto from './recipes/upload-recipe-photo'
-import uploadUserPhoto from './users/upload-user-photo'
 
 const handlers = {
   getComment,
@@ -43,9 +41,7 @@ const handlers = {
   removeRecipe,
   updateComment,
   updateRecipe,
-  updateUser,
-  uploadRecipePhoto,
-  uploadUserPhoto
+  updateUser
 }
 
 const apiRoutes = (req, res, next) => {

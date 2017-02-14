@@ -1,7 +1,7 @@
 const logout = ({authenticated, req, error, success}) => {
   const response = {
     error: 'Inte inloggad.',
-    success: 'Utloggning lyckad.'
+    success: 'Utloggad.'
   }
 
   if (authenticated) {

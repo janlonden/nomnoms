@@ -11,7 +11,7 @@ const updateComment = ({
 
   const response = {
     auth: 'Måste vara inloggad för att uppdatera kommentarer.',
-    error: 'Kunde inte uppdatera kommentar.',
+    error: 'Kunde inte uppdatera kommentar. Försök igen senare.',
     success: 'Kommentaren uppdaterades.'
   }
 

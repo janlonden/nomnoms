@@ -6,7 +6,7 @@ const register = ({authenticated, req, error, success, User, striptags}) => {
   const response = {
     auth: 'Redan inloggad.',
     userExists: 'En användare med samma e-post finns redan.',
-    error: 'Kunde inte logga in.'
+    error: 'Kunde inte logga in. Försök igen senare.'
   }
 
   if (authenticated) {

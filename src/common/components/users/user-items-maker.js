@@ -273,7 +273,7 @@ const userItemsMaker = what => {
 
         {renderItems()}
 
-        {items.length < total &&
+        {items.length >= 20 && items.length < total &&
           <div styleName="box">
             <a
               href="#"

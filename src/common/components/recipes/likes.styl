@@ -1,19 +1,19 @@
 @import '../../styles/import'
 
 .root
+  font(altFont)
   align-items center
   color brownish
   display flex
-  font(altFont)
   line-height 1
   padding 1rem
 
   &:before
+    wh(20px)
+    icon('heart', 'red')
     background-position center
     background-repeat no-repeat
-    icon('heart', 'red')
     transition background .1s ease
-    wh(20px)
 
   &.link
     &:hover

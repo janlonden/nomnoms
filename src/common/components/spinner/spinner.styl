@@ -1,26 +1,26 @@
 @import '../../styles/import'
 
 .root
+  wh(40px)
   margin 20px auto
   position relative
   transform rotateZ(45deg)
-  wh(40px)
 
   div
+    wh(50%)
     float left
     position relative
     transform scale(1.1)
-    wh(50%)
 
     &:before
+      wh(100%)
+      transform-origin 100% 100%
       animation cube-animation 2.4s infinite linear both
       background purple
       content ''
       left 0
       position absolute
       top 0
-      transform-origin 100% 100%
-      wh(100%)
 
     &:nth-of-type(2)
       transform scale(1.1) rotateZ(90deg)

@@ -10,7 +10,7 @@ const removeComment = ({
 
   const response = {
     auth: 'Måste vara inloggad för att radera kommentarer.',
-    error: 'Kunde inte radera kommentar.',
+    error: 'Kunde inte radera kommentar. Försök igen senare.',
     success: 'Kommentaren raderades.'
   }
 

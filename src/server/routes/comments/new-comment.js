@@ -14,7 +14,7 @@ const newComment = ({
 
   const response = {
     auth: 'Måste vara inloggad för att kommentera.',
-    error: 'Kunde inte lägga till kommentar.',
+    error: 'Kunde inte lägga till kommentar. Försök igen senare.',
   }
 
   if (! authenticated) {

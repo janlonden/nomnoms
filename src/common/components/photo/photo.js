@@ -5,14 +5,15 @@ import styles from './photo.styl'
 
 const Photo = ({photo, what, size = 'medium'}) => photo
   ? <div styleName="root">
-      <div styleName="photo" style={{
+      <div styleName="loading"></div>
+      <div style={{
         backgroundImage: `url('https://londen.se/nomnoms/photos/${
           what === 'recipe' ? 'recipes/' : 'users/'
         }${size}_${photo}')`
       }}>
       </div>
     </div>
-  : <div styleName="root no-photo"></div>
+  : <div styleName="root"><div styleName="no-photo"></div></div>
 
 Photo.propTypes = {
   photo: PropTypes.string,

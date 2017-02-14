@@ -2,18 +2,19 @@
 
 @import '../../styles/classes/button'
 
-.inner
-  height 60vw
+.root
+  height 80vw
   min-height 15rem
   position relative
+  overflow hidden
 
   &.user-photo
     height 25rem
 
 .photo
+  wh(100%)
   overflow hidden
   display flex
-  wh(100%)
 
 .label
   bottom 0
@@ -41,23 +42,23 @@
       icon('timeglass', 'light')
 
 .error
+  font(altFont)
+  buttonPadding(1rem)
   background yellow
   position absolute
   left 2rem
   right 2rem
   top 2rem
   width auto
-  font(altFont)
-  buttonPadding(1rem)
   text-align center
 
 .input-file
+  wh(0.1px)
 	opacity 0
 	overflow hidden
 	position absolute
-	wh(0.1px)
 	z-index -1
 
 @media (min-width: 699px)
-  .inner
+  .root
     height 35rem

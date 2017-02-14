@@ -66,21 +66,19 @@ const PhotoUpload = ({
   }
 
   return (
-    <section>
-      <div styleName={`inner ${what === 'user' ? 'user-photo': ''}`}>
-        <div styleName="photo">
-          <Photo photo={photo} what={what} />
-        </div>
-
-        <label
-          styleName={`button label ${uploading ? 'uploading' : ''}`}
-          htmlFor="input-file"
-        >
-          <span>{uploading ? 'Laddar upp' : 'Välj foto'}</span>
-        </label>
-
-        {Boolean(photoError) && <p styleName="error">{photoError}</p>}
+    <section styleName={`root ${what === 'user' ? 'user-photo': ''}`}>
+      <div styleName="photo">
+        <Photo photo={photo} what={what} />
       </div>
+
+      <label
+        styleName={`button label ${uploading ? 'uploading' : ''}`}
+        htmlFor="input-file"
+      >
+        <span>{uploading ? 'Laddar upp' : 'Välj foto'}</span>
+      </label>
+
+      {Boolean(photoError) && <p styleName="error">{photoError}</p>}
 
       <input
         id="input-file"

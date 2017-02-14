@@ -21,7 +21,7 @@ const newRecipe = ({
 
   const response = {
     auth: 'Måste vara inloggad för att lägga till recept.',
-    error: 'Kunde inte lägga till recept.'
+    error: 'Kunde inte lägga till recept. Försök igen senare.'
   }
 
   if (! authenticated) {

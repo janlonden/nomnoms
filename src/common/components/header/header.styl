@@ -9,25 +9,26 @@
   align-items center
   display flex
   line-height 1
+  position relative
 
   &:before
+    svg('logo')
+    wh(2rem)
+    content ''
     background-position center
     background-repeat no-repeat
     background-size cover
-    content ''
     display block
-    svg('logo')
     margin-right 1rem
-    wh(2rem)
     flex-shrink 0
 
 .responsive
+  center()
+  wh(100%)
   position fixed
   left 0
   top 0
-  wh(100%)
   background white
-  center()
   display none
   overflow auto
 
@@ -42,22 +43,22 @@
     margin-bottom 2rem
 
 .open-responsive
+  wh(28px)
   display none
   position fixed
   right 2rem
   top @right
   z-index 3
-  wh(28px)
 
   &.close
     &:after
       icon('x-big', 'dark')
 
   &:after
-    content ''
-    display block
     wh(100%)
     icon('nav', 'dark')
+    content ''
+    display block
 
   &.visible
     display inline-block
@@ -104,8 +105,8 @@
     height 100%
 
   .avatar
-    background white
     center()
+    background white
     height 100%
     width 6rem
 

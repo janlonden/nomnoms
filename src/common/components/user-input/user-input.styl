@@ -1,13 +1,13 @@
 @import '../../styles/import'
 
 .root
+  wh(100%)
   background rgba(purple2, .9)
   display block
   left 0
+  top @left
   overflow auto
   position fixed
-  top 0
-  wh(100%)
   z-index inputIndex
   padding-top 6rem
   padding-bottom 2rem
@@ -17,16 +17,16 @@
   min-height 100%
 
 .close
+  wh(28px)
   position absolute
   right 2rem
   top @right
-  wh(28px)
 
   &:after
-    content ''
-    display block
     wh(100%)
     icon('x-big', 'light')
+    content ''
+    display block
 
 @media (min-width: 1023px)
   .close

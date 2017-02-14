@@ -3,7 +3,7 @@ const likeRecipe = ({authenticated, req, error, success, userId, Recipe}) => {
 
   const response = {
     auth: 'Måste vara inloggad för att gilla recept.',
-    error: 'Kunde inte gilla recept.',
+    error: 'Kunde inte gilla recept. Försök igen senare.',
     success: 'Recept gillad/ogillad.'
   }
 

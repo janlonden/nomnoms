@@ -59,7 +59,7 @@ const CommentList = ({comments, setInput, userId}) =>
 
           <div styleName="author-and-date">
             <span styleName="author">{comment.author} </span>
-            <span>{date(comment.createdAt)}</span>
+            <span styleName="date">{date(comment.createdAt)}</span>
           </div>
         </footer>
       </article>

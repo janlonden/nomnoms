@@ -1,28 +1,25 @@
 @import '../../styles/import'
 
 .root
+  position relative
   flex-grow 1
   background-color purple
-  background-position center
-  background-repeat no-repeat
-  background-size 3vw
-  svg('/icons/timeglass-light')
 
-.photo
-  wh(100%)
-  background-position center
-  background-repeat no-repeat
-  background-size cover
-
-.no-photo
-  background-image none
-
-  &:before
+  > div
+    wh(100%)
+    position absolute
+    left 0
+    top @left
     background-position center
     background-repeat no-repeat
     background-size cover
-    content ''
-    svg('no-photo')
-    display block
-    opacity .5
-    wh(100%)
+
+.loading
+.no-photo
+  opacity .5
+
+.loading
+  svg('loading')
+
+.no-photo
+  svg('no-photo')

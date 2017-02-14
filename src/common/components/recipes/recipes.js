@@ -108,7 +108,7 @@ const Recipes = ({query, dispatch, allRecipes, user}) => {
 
   return (
     <main styleName="boxes">
-      <section styleName="box filter">
+      <section styleName="box filter center">
         <h2 styleName="heading">Recept</h2>
 
         <div styleName="sort">
@@ -143,7 +143,7 @@ const Recipes = ({query, dispatch, allRecipes, user}) => {
 
       {renderRecipes()}
 
-      {recipes.length < total &&
+      {recipes.length >= 20 && recipes.length < total &&
         <section styleName="box">
           <a
             href="#"

@@ -10,21 +10,9 @@
     width 100%
 
     span
+      noWrap()
       width @width
       color brownish
-      noWrap()
-
-  .compose
-    background orange
-
-    &:after
-      background purple2
-
-    span
-      color white
-
-      &:before
-        icon('plus', 'light')
 
 .non-responsive
   height 100%
@@ -53,9 +41,32 @@
     transition opacity .2s ease, visibility .2s ease
     visibility hidden
 
+  .compose
+    background orange
+
+    &:after
+      background purple
+
+    span
+      color white
+
+      &:before
+        icon('plus', 'light')
+
 .responsive
   .open
     display none
+
+  .compose
+    background transparent
+
+    &:after
+      background lighten(beige2, 60%)
+
+  .compose
+    span
+      &:before
+        icon('plus', 'dark')
 
 .nav
   li

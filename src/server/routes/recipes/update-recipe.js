@@ -21,7 +21,7 @@ const updateRecipe = ({
 
   const response = {
     auth: 'Måste vara inloggad för att uppdatera recept.',
-    error: 'Kunde inte uppdatera recept.',
+    error: 'Kunde inte uppdatera recept. Försök igen senare.',
     success: 'Receptet uppdaterades.'
   }
 

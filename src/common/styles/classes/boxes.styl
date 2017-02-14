@@ -1,13 +1,14 @@
 .boxes
   display flex
   flex-flow row wrap
+  flex-shrink 0
 
 .box
   center(text: true)
+  breakWord()
   overflow hidden
   flex 0 0 100%
   padding 2rem
-  breakWord()
 
 @media (min-width: 567px)
   .box

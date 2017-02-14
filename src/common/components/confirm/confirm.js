@@ -83,7 +83,7 @@ const Confirm = ({dispatch, confirm}) => {
 
   return (
     <div styleName="root">
-      <p>
+      <p styleName="message">
         {
           'Är du säker på att du vill ta bort '
           + (item === 'recipe' ? 'receptet' : 'kommentaren') + '?'

@@ -14,8 +14,8 @@
   position relative
 
 .arrow
-  position absolute
   wh(0)
+  position absolute
 
 @media (max-width: 699px)
   .arrow
@@ -62,8 +62,8 @@
 
   .meta
     flex-basis (100 / 3)%
-    padding-right (spacing)vw
-    padding-left (spacing * .5)vw
+    padding-right (spacing * .5)vw
+    padding-left @padding-right
 
 @media (max-width: 1023px)
   .comment
@@ -78,9 +78,6 @@
     center(text: true)
 
 @media (min-width: 699px) and (max-width: 1023px)
-  .meta
-    align-items flex-end
-
   .comment
     &:first-of-type
       .meta
