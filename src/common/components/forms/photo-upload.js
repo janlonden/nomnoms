@@ -50,7 +50,10 @@ const PhotoUpload = ({
       })
 
       .catch(err => {
-        console.log(err)
+        dispatch(
+          `set_${newOrUpdate}_${what}_photo_error`,
+          'Fotot kunde inte laddas upp. Försök igen senare.'
+        )
 
         dispatch(`set_${newOrUpdate}_${what}_uploading`, false)
       })
