@@ -14,8 +14,6 @@ const PhotoUpload = ({
   const onChange = ({target}) => {
     const photo = target.files[0]
 
-    console.log(photo)
-
     if (! photo || uploading) {
       return
     }
