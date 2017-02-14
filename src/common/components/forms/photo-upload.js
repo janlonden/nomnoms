@@ -18,6 +18,8 @@ const PhotoUpload = ({
       return
     }
 
+    console.log(photo)
+
     const isValidFileFormat =
       photo.name.split('.').pop().toLowerCase() === 'jpg'
 
