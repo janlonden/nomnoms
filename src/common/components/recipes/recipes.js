@@ -19,7 +19,10 @@ import NoSearchResults from
 import styles from './recipes.styl'
 
 const Recipes = ({query, dispatch, allRecipes, user}) => {
-  const {isSorting, recipes, sort, sortNavActive, total} = allRecipes
+  const {
+    isSorting, isSearching, recipes, sort, sortNavActive, total
+  } = allRecipes
+
   const {_id: userId} = user
 
   const addRecipes = event => {
@@ -83,60 +86,76 @@ const Recipes = ({query, dispatch, allRecipes, user}) => {
     dispatch('set_all_recipes_sort_nav_active', false)
   }
 
-  return recipes.length
-    ? <main styleName="boxes">
-        <section styleName="box filter">
-          <h2 styleName="heading">Recept</h2>
+  const renderRecipes = () => {
+    if (isSearching) {
+      return (
+        <div styleName="box"><Spinner/></div>
+      )
+    }
 
-          <div styleName="sort">
-            <a
-              href="#"
-              onClick={onSortClick}
-              onMouseOut={sortNavTimeout}
-              onMouseOver={openSortNav}
+    else if (query && ! isSearching && ! recipes.length) {
+      return (
+        <div styleName="box">
+          <NoSearchResults what='recept' query={query} />
+        </div>
+      )
+    }
 
-              styleName={
-                'button open-sort-nav'
-                + (sortNavActive ? ' active' : '')
-                + (isSorting ? ' sorting' : '')
-              }
-            >
-              <span>{sort}</span>
-            </a>
+    else {
+      return RecipeArticles(recipes, userId)
+    }
+  }
 
-            <ul
-              onMouseOut={sortNavTimeout}
-              onMouseOver={openSortNav}
-              styleName={`sort-nav ${sortNavActive ? 'active' : ''}`}
-            >
-              <li><a href="#" onClick={changeSort}>Nya först</a></li>
-              <li><a href="#" onClick={changeSort}>Gamla först</a></li>
-              <li><a href="#" onClick={changeSort}>Populäritet</a></li>
-              <li><a href="#" onClick={changeSort}>Från A till Ö</a></li>
-              <li><a href="#" onClick={changeSort}>Från Ö till A</a></li>
-            </ul>
-          </div>
+  return (
+    <main styleName="boxes">
+      <section styleName="box filter">
+        <h2 styleName="heading">Recept</h2>
+
+        <div styleName="sort">
+          <a
+            href="#"
+            onClick={onSortClick}
+            onMouseOut={sortNavTimeout}
+            onMouseOver={openSortNav}
+
+            styleName={
+              'button open-sort-nav'
+              + (sortNavActive ? ' active' : '')
+              + (isSorting ? ' sorting' : '')
+            }
+          >
+            <span>{sort}</span>
+          </a>
+
+          <ul
+            onMouseOut={sortNavTimeout}
+            onMouseOver={openSortNav}
+            styleName={`sort-nav ${sortNavActive ? 'active' : ''}`}
+          >
+            <li><a href="#" onClick={changeSort}>Nya först</a></li>
+            <li><a href="#" onClick={changeSort}>Gamla först</a></li>
+            <li><a href="#" onClick={changeSort}>Populäritet</a></li>
+            <li><a href="#" onClick={changeSort}>Från A till Ö</a></li>
+            <li><a href="#" onClick={changeSort}>Från Ö till A</a></li>
+          </ul>
+        </div>
+      </section>
+
+      {renderRecipes()}
+
+      {recipes.length < total &&
+        <section styleName="box">
+          <a
+            href="#"
+            onClick={addRecipes}
+            styleName="button more-link"
+          >
+            <span>Visa fler</span>
+          </a>
         </section>
-
-        {RecipeArticles(recipes, userId)}
-
-        {recipes.length < total &&
-          <section styleName="box">
-            <a
-              href="#"
-              onClick={addRecipes}
-              styleName="button more-link"
-            >
-              <span>Visa fler</span>
-            </a>
-          </section>
-        }
-      </main>
-    : query
-      ? <main styleName="center">
-          <NoSearchResults what="recept" query={query} />
-        </main>
-      : <main styleName="center"><Spinner/></main>
+      }
+    </main>
+  )
 }
 
 const getRecipes = ({dispatch, allRecipes}) => {
@@ -190,16 +209,12 @@ const lifeCycleMethods = {
 
     sort$
       .subscribe(props => {
-        dispatch('set_all_recipes_sorting', true)
-
         promise$.next(getRecipes(props))
       })
 
     query$
       .debounceTime(500)
       .subscribe(props => {
-        dispatch('set_all_recipes_searching', true)
-
         promise$.next(getRecipes(props))
       })
 
@@ -223,11 +238,21 @@ const lifeCycleMethods = {
   },
 
   componentDidUpdate (props, prevProps) {
+    const {dispatch, allRecipes} = props
+
     if (props.allRecipes.sort !== prevProps.allRecipes.sort) {
+      if (! allRecipes.isSorting) {
+        dispatch('set_all_recipes_sorting', true)
+      }
+
       sort$.next(props)
     }
 
     if (props.allRecipes.query !== prevProps.allRecipes.query) {
+      if (! allRecipes.isSearching) {
+        dispatch('set_all_recipes_searching', true)
+      }
+
       query$.next(props)
     }
   },

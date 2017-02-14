@@ -4,18 +4,12 @@ import React, {PropTypes} from 'react'
 
 import styles from './search.styl'
 
-let timeout
-
 const Search = ({pathname, query, isSearching, dispatch}) => {
   const onChange = ({target}) => {
     const {value} = target
 
-    if (query && pathname !== '/recept') {
-      clearTimeout(timeout)
-
-      timeout = setTimeout(() => {
-        browserHistory.push('/recept')
-      }, 250)
+    if (value && pathname !== '/recept') {
+      browserHistory.push('/recept')
     }
 
     dispatch('set_all_recipes_query', value)

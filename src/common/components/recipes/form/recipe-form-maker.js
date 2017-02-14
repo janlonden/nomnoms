@@ -32,7 +32,7 @@ const recipeFormMaker = what =>
   const onSubmit = event => {
     event.preventDefault()
 
-    if (checkAndSetErrors()) {
+    if (checkAndSetErrors() || uploading) {
       return
     }
 
@@ -151,12 +151,14 @@ const recipeFormMaker = what =>
             'button'
 
             + (isUpdate ? ' update' : ' new')
-            + (requesting ? ' requesting' : '')
+            + ((requesting || uploading) ? ' requesting' : '')
           }>
             <span>
-              {isUpdate
-                ? requesting ? 'Sparar' : 'Spara'
-                : requesting ? 'Skickar' : 'Skicka'
+              {uploading
+                ? 'Laddar upp foto'
+                : isUpdate
+                  ? requesting ? 'Sparar' : 'Spara'
+                  : requesting ? 'Skickar' : 'Skicka'
               }
             </span>
           </button>

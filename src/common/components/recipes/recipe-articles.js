@@ -19,7 +19,7 @@ const RecipeArticles = (recipes, userId) =>
   }, index) =>
     <article key={index} styleName="box recipe">
       <div styleName="photo">
-        <Photo photo={photo} what="recipe" />
+        <Photo photo={photo} what="recipe" size='small' />
       </div>
 
       <div styleName="content">

@@ -2,18 +2,27 @@
 
 .root
   flex-grow 1
+  background-color purple
+  background-position center
+  background-repeat no-repeat
+  background-size 3vw
+  svg('/icons/timeglass-light')
+
+.photo
+  wh(100%)
   background-position center
   background-repeat no-repeat
   background-size cover
-  background-color purple
 
 .no-photo
+  background-image none
+
   &:before
     background-position center
     background-repeat no-repeat
     background-size cover
     content ''
-    display block
     svg('no-photo')
+    display block
     opacity .5
     wh(100%)

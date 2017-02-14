@@ -122,19 +122,13 @@ const userItemsMaker = what => {
     }
 
     const renderItems = () => {
-      if (
-        isSearching ||
-        hasItems &&
-        ! query &&
-        ! isSearching &&
-        ! items.length
-      ) {
+      if (isSearching) {
         return (
           <div styleName="box"><Spinner/></div>
         )
       }
 
-      else if (query && hasItems && ! isSearching && ! items.length) {
+      else if (query && ! isSearching && ! items.length) {
         return (
           <div styleName="box">
             <NoSearchResults
@@ -326,16 +320,12 @@ const userItemsMaker = what => {
 
       sort$
         .subscribe(props => {
-          dispatch(`set_user_${what}_sorting`, true)
-
           promise$.next(getItems(props))
         })
 
       query$
         .debounceTime(500)
         .subscribe(props => {
-          dispatch(`set_user_${what}_searching`, true)
-
           promise$.next(getItems(props))
         })
 
@@ -359,11 +349,21 @@ const userItemsMaker = what => {
     },
 
     componentDidUpdate (props, prevProps) {
+      const {dispatch, userItems} = props
+
       if (props.userItems.sort !== prevProps.userItems.sort) {
+        if (! userItems.isSorting) {
+          dispatch(`set_user_${what}_sorting`, true)
+        }
+
         sort$.next(props)
       }
 
       if (props.userItems.query !== prevProps.userItems.query) {
+        if (! userItems.isSearching) {
+          dispatch(`set_user_${what}_searching`, true)
+        }
+
         query$.next(props)
       }
     },

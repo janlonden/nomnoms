@@ -3,10 +3,14 @@ import React, {PropTypes} from 'react'
 
 import styles from './photo.styl'
 
-const Photo = ({photo, what}) => photo
-  ? <div styleName="root" style={{
-      backgroundImage: `url('https://londen.se/nomnoms/photos/medium_${photo}')`
-    }}>
+const Photo = ({photo, what, size = 'medium'}) => photo
+  ? <div styleName="root">
+      <div styleName="photo" style={{
+        backgroundImage: `url('https://londen.se/nomnoms/photos/${
+          what === 'recipe' ? 'recipes/' : 'users/'
+        }${size}_${photo}')`
+      }}>
+      </div>
     </div>
   : <div styleName="root no-photo"></div>
 

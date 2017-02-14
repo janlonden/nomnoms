@@ -7,7 +7,7 @@ import styles from './avatar.styl'
 
 const Avatar = ({photo, classes = '', name}) => photo
   ? <div styleName={`root ${classes}`}>
-      <Photo photo={photo} what="user" />
+      <Photo photo={photo} what="user" size='small' />
     </div>
   : <div styleName={`root no-photo ${classes}`}>{name.substring(0, 1)}</div>
 

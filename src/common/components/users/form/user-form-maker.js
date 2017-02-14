@@ -33,7 +33,7 @@ const userFormMaker = what =>
   const onSubmit = event => {
     event.preventDefault()
 
-    if (checkAndSetErrors()) {
+    if (checkAndSetErrors() || uploading) {
       return
     }
 
@@ -250,12 +250,14 @@ const userFormMaker = what =>
             'button'
 
             + (isUpdate ? ' update' : ' new')
-            + (requesting ? ' requesting' : '')
+            + ((requesting || uploading) ? ' requesting' : '')
           }>
             <span>
-              {isUpdate
-                ? requesting ? 'Sparar' : 'Spara'
-                : requesting ? 'Registrerar' : 'Registrera'
+              {uploading
+                ? 'Laddar upp foto'
+                : isUpdate
+                  ? requesting ? 'Sparar' : 'Spara'
+                  : requesting ? 'Registrerar' : 'Registrera'
               }
             </span>
           </button>

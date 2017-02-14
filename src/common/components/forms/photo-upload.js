@@ -43,19 +43,21 @@ const PhotoUpload = ({
 
     dispatch(`set_${newOrUpdate}_${what}_uploading`, true)
 
-    req.post('https://londen.se/nomnoms/photo-upload.php', payload)
+    const section = what === 'recipe' ? 'recipes' : 'users'
+
+    req.post(`https://londen.se/nomnoms/photos/${section}/upload.php`, payload)
       .then(res => {
         dispatch(`set_${newOrUpdate}_${what}_photo`, res.data)
         dispatch(`set_${newOrUpdate}_${what}_uploading`, false)
       })
 
       .catch(err => {
+        dispatch(`set_${newOrUpdate}_${what}_uploading`, false)
+
         dispatch(
           `set_${newOrUpdate}_${what}_photo_error`,
           'Fotot kunde inte laddas upp. Försök igen senare.'
         )
-
-        dispatch(`set_${newOrUpdate}_${what}_uploading`, false)
       })
   }
 
@@ -66,7 +68,9 @@ const PhotoUpload = ({
   return (
     <section>
       <div styleName={`inner ${what === 'user' ? 'user-photo': ''}`}>
-        <div styleName="photo"><Photo photo={photo} what={what} /></div>
+        <div styleName="photo">
+          <Photo photo={photo} what={what} />
+        </div>
 
         <label
           styleName={`button label ${uploading ? 'uploading' : ''}`}
