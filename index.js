@@ -4,6 +4,7 @@ import csshook from 'css-modules-require-hook/preset'
 import express from 'express'
 import mongoose from 'mongoose'
 import session from 'express-session'
+import favicon from 'serve-favicon'
 
 import apiRoutes from 'server/routes/api-routes'
 import passport from 'server/passport'
@@ -29,6 +30,7 @@ const port = process.env.PORT
   : 3000
 
 app.use('/dist', express.static('dist'))
+app.use(favicon('/dist/favicon.ico'))
 app.use(bodyParser.json())
 
 app.use(session({

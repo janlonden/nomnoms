@@ -57,8 +57,8 @@ const handleRouter = (req, res, renderProps) => {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     ${production ? '<link rel="stylesheet" href="/dist/main.css">' : ''}
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/dist/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/dist/favicon-16x16.png" sizes="16x16" />
   </head>
   <body>
     <div id="app">${render}</div>
