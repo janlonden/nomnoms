@@ -131,9 +131,11 @@ const Recipe =
             <ul>
               {recipe.ingredients.map((ingredient, index) =>
                 <li key={index}>
-                  <b>{ingredient.amount}</b>
+                  {ingredient.amount &&
+                    <b>{ingredient.amount}</b>
+                  }
 
-                  <span> {ingredient.ingredient}</span>
+                  <span>{ingredient.ingredient}</span>
                 </li>
               )}
             </ul>

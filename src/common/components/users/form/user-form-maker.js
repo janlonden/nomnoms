@@ -208,6 +208,10 @@ const userFormMaker = what =>
         </section>
 
         <section styleName="input-section password-section">
+          <p styleName="caution">
+            Använd ett unikt lösenord för säkerhets skull.
+          </p>
+
           {errors.password && errors.password !== 'initial' &&
             <p styleName="error">{errors.password}</p>
           }

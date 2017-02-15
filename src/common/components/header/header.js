@@ -119,7 +119,7 @@ const dispatchToProps = dispatch => ({
 })
 
 const lifeCycleMethods = {
-  componentDidMount ({dispatch}) {
+  componentDidMount ({dispatch, nav}) {
     let timeout
 
     const addClass = () => {
@@ -135,7 +135,7 @@ const lifeCycleMethods = {
     window.addEventListener('resize', addClass)
 
     window.addEventListener('keydown', event => {
-      if (event.keyCode === 27) {
+      if (nav.responsiveNavActive && event.keyCode === 27) {
         dispatch('set_nav_responsive_active', false)
       }
     })
