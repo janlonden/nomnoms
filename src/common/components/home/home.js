@@ -17,6 +17,7 @@ const Home = ({recentRecipes, popularRecipes, dispatch, userId}) => {
     event.preventDefault()
 
     dispatch('set_all_recipes_sort', what)
+    dispatch('set_all_recipes_sorting', true)
 
     browserHistory.push('/recept')
   }
