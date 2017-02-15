@@ -19,7 +19,7 @@ const userItemsMaker = what => {
     dispatch, request, setInput, user, userItems, recipesActive, commentsActive
   }) => {
     const {
-      hasItems,
+      hasFetched,
       isSearching,
       isSorting,
       items,
@@ -122,7 +122,7 @@ const userItemsMaker = what => {
     }
 
     const renderItems = () => {
-      if (isSearching) {
+      if (! hasFetched || isSearching) {
         return (
           <div styleName="box"><Spinner/></div>
         )

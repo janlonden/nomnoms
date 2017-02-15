@@ -1,5 +1,5 @@
 const shared = {
-  hasItems: 0,
+  hasFetched: false,
   active: false,
   isSearching: false,
   isSorting: false,
@@ -20,10 +20,7 @@ const userItemsReducerMaker = what => {
         return {
           ... state,
           items: payload,
-
-          hasItems: payload.length > state.hasItems
-            ? payload.length
-            : state.hasItems
+          hasFetched: true
         }
       }
 
@@ -78,15 +75,7 @@ const userItemsReducerMaker = what => {
       case `del_user_${isRecipes ? 'recipe' : 'comment'}`: {
         const items = state.items.filter(item => item._id !== payload)
 
-        const newState = {
-          ... state,
-          items,
-          hasItems: items.length ? true : false
-        }
-
-        return newState.items.length
-          ? newState
-          : {... newState, hasItems: false}
+        return {... state, items}
       }
 
       case `clear_user_${what}_query`: {

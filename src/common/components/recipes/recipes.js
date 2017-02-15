@@ -20,7 +20,7 @@ import styles from './recipes.styl'
 
 const Recipes = ({query, dispatch, allRecipes, user}) => {
   const {
-    isSorting, isSearching, recipes, sort, sortNavActive, total
+    hasFetched, isSorting, isSearching, recipes, sort, sortNavActive, total
   } = allRecipes
 
   const {_id: userId} = user
@@ -87,10 +87,8 @@ const Recipes = ({query, dispatch, allRecipes, user}) => {
   }
 
   const renderRecipes = () => {
-    if (isSearching) {
-      return (
-        <div styleName="box"><Spinner/></div>
-      )
+    if (! hasFetched || isSearching) {
+      return <div styleName="box"><Spinner/></div>
     }
 
     else if (query && ! isSearching && ! recipes.length) {

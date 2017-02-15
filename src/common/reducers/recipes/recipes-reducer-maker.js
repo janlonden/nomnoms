@@ -1,4 +1,5 @@
 const initial = {
+  hasFetched: false,
   isSearching: false,
   isSorting: false,
   query: '',
@@ -11,7 +12,7 @@ const initial = {
 const recipesReducerMaker = what => (state = initial, {type, payload}) => {
   switch (type) {
     case `set_${what}_recipes`: {
-      return {... state, recipes: payload}
+      return {... state, recipes: payload, hasFetched: true}
     }
 
     case `add_${what}_recipes`: {

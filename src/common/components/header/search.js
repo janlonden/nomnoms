@@ -9,7 +9,11 @@ const Search = ({pathname, query, isSearching, dispatch}) => {
     const {value} = target
 
     if (value && pathname !== '/recept') {
-      browserHistory.push('/recept')
+      dispatch('set_all_recipes', [])
+
+      setTimeout(() => {
+        browserHistory.push('/recept')
+      }, 100)
     }
 
     dispatch('set_all_recipes_query', value)
