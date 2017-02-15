@@ -156,10 +156,10 @@ const lifeCycleMethods = {
   },
 
   componentDidMount (props) {
-    const {dispatch, input} = props
+    const {dispatch} = props
 
     window.addEventListener('keydown', event => {
-      if (input && event.keyCode === 27) {
+      if (event.keyCode === 27) {
         dispatch('clear_input')
         dispatch('clear_confirm')
       }
