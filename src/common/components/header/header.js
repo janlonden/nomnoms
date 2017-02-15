@@ -56,13 +56,11 @@ const Header = ({dispatch, isSearching, pathname, query, nav, user}) => {
 
           {Boolean(user._id) &&
             <div styleName="avatar">
-              <div>
-                <Avatar
-                  classes={responsive ? 'medium' : ''}
-                  name={user.fullName}
-                  photo={user.photo}
-                />
-              </div>
+              <Avatar
+                classes={responsive ? 'medium' : ''}
+                name={user.fullName}
+                photo={user.photo}
+              />
             </div>
           }
 
