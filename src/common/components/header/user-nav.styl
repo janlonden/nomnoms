@@ -7,8 +7,6 @@
   position relative
 
   .button
-    width 100%
-
     span
       noWrap()
       width @width
@@ -16,6 +14,9 @@
 
 .non-responsive
   height 100%
+
+  .button
+    width 100%
 
   .open
     background transparent
@@ -54,6 +55,10 @@
         icon('plus', 'light')
 
 .responsive
+  .nav
+    li
+      justify-content center
+
   .open
     display none
 
