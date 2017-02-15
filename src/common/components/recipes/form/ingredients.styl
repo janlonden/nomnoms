@@ -20,15 +20,14 @@
   width 100%
   margin-bottom (spacing)vw
 
-  input:first-of-type
-    padding-right 1rem
-    flex-basis 40%
-
-  input:last-of-type
-    flex-basis 60%
-
 .ingredient
   display flex
+
+.ingredient-amount
+  flex-basis 40%
+
+.ingredient-ingredient
+  flex-basis 60%
 
 .input-text
   placeholder(beige)
@@ -55,17 +54,23 @@
     flex-basis 100%
     display flex
     justify-content flex-end
+    padding-top 1rem
     border-top 1px solid rgba(beige, .05)
 
 @media (min-width: 567px)
   .ingredient
     border-bottom 1px solid rgba(beige, .05)
+    position relative
 
-  .input-text
+  .ingredient-amount
     margin-right 2rem
 
+  .ingredient-ingredient
+    margin-right 150px
+
   .edit-nav
-    position relative
+    position absolute
+    top 1rem
     right -1rem
 
   .error

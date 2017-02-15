@@ -76,7 +76,7 @@ const Ingredients = ({what, ingredients, errors, dispatch}) => {
               name="amount"
               onChange={onChange}
               placeholder="Lite"
-              styleName="input-text"
+              styleName="ingredient-amount input-text"
               type="text"
               value={ingredient.amount}
             />
@@ -91,7 +91,7 @@ const Ingredients = ({what, ingredients, errors, dispatch}) => {
               name="ingredient"
               onChange={onChange}
               placeholder="Svartpeppar"
-              styleName="input-text"
+              styleName="ingredient-ingredient input-text"
               type="text"
               value={ingredient.ingredient}
             />
