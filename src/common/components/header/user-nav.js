@@ -12,10 +12,14 @@ const UserNav = ({
 
   let timeout
 
-  const setUserNavActive = what => () => {
+  const setUserNavActive = what => event => {
+    event.preventDefault()
+
     clearTimeout(timeout)
 
-    dispatch('set_nav_user_active', what)
+    if (! userNavActive) {
+      dispatch('set_nav_user_active', what)
+    }
   }
 
   const userNavTimeout = () => {
@@ -60,6 +64,7 @@ const UserNav = ({
     >
       <a
         href="#"
+        onClick={setUserNavActive(true)}
         onMouseOut={! responsive && userNavTimeout}
         onMouseOver={! responsive && setUserNavActive(true)}
         styleName="button open"
