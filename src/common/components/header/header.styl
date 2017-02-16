@@ -5,22 +5,26 @@
   z-index headerIndex
 
 .logo
-  font(logoFont)
-  align-items center
-  display flex
-  line-height 1
-  position relative
+  display inline-block
 
-  &:before
-    svg('logo')
-    wh(2rem)
-    content ''
-    background-position center
-    background-repeat no-repeat
-    background-size cover
-    display block
-    margin-right 1rem
-    flex-shrink 0
+  a
+    font(logoFont)
+    align-items center
+    display flex
+    line-height 1
+    position relative
+    color brownish
+
+    &:before
+      svg('logo')
+      wh(2rem)
+      content ''
+      background-position center
+      background-repeat no-repeat
+      background-size cover
+      display block
+      margin-right 1rem
+      flex-shrink 0
 
 .responsive
   center()

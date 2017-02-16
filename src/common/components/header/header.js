@@ -1,4 +1,5 @@
 import {connect} from 'react-redux'
+import {IndexLink} from 'react-router'
 import CSSModules from 'react-css-modules'
 import functional from 'react-functional'
 import React, {PropTypes} from 'react'
@@ -24,7 +25,7 @@ const Header = ({dispatch, isSearching, pathname, query, nav, user}) => {
 
   return (
     <header styleName="root">
-      <h1 styleName="logo">NOMNOMS</h1>
+      <h1 styleName="logo"><IndexLink to="/">NOMNOMS</IndexLink></h1>
 
       <Search
         dispatch={dispatch}
