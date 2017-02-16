@@ -162,8 +162,10 @@ const userItemsMaker = what => {
 
       else {
         return (
-          <div styleName="box no-items">
-            <h2>Inga {isRecipes ? 'recept' : 'kommentarer'} än.</h2>
+          <div styleName="box">
+            <h2 styleName="alt-heading">
+              Inga {isRecipes ? 'recept' : 'kommentarer'} än.
+            </h2>
           </div>
         )
       }
