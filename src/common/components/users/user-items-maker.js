@@ -121,6 +121,20 @@ const userItemsMaker = what => {
       dispatch(`clear_user_${what}_query`)
     }
 
+    const onSearchFocus = () => {
+      const magnifyingGlass = document.querySelector('.magnifying-glass-user')
+
+      magnifyingGlass.classList.add('magnifying-glass-hidden')
+    }
+
+    const onSearchBlur = () => {
+      if (! query) {
+        const magnifyingGlass = document.querySelector('.magnifying-glass-user')
+
+        magnifyingGlass.classList.remove('magnifying-glass-hidden')
+      }
+    }
+
     const renderItems = () => {
       if (! hasFetched || isSearching) {
         return (
@@ -193,25 +207,36 @@ const userItemsMaker = what => {
           </ul>
 
           <div styleName="search-sort">
-            <label className="hidden" htmlFor={`${what}-search-input`}>
-              Sök {isRecipes ? 'recept' : 'kommentarer'}
-            </label>
-
             <div styleName="search">
+              <label className="hidden" htmlFor={`${what}-search-input`}>
+                Sök {isRecipes ? 'recept' : 'kommentarer'}
+              </label>
+
               <input
                 id={`${what}-search-input`}
                 name="query"
+                onBlur={onSearchBlur}
                 onChange={onQueryChange}
-                placeholder={`Sök ${isRecipes ? 'recept' : 'kommentarer'}`}
+                onFocus={onSearchFocus}
                 styleName="input-text"
                 type="text"
                 value={query}
               />
 
+              <span
+                styleName="magnifying-glass"
+
+                className={
+                  'magnifying-glass-user'
+                  + (query ? ' magnifying-glass-hidden' : '')
+                }
+              >
+              </span>
+
               <a
                 href="#"
                 onClick={clearQuery}
-                styleName={`clear-search ${query.length ? 'visible' : ''}`}
+                styleName={`clear-search ${query ? 'visible' : ''}`}
               >
                 Avbryt sökning
               </a>

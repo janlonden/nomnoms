@@ -10,14 +10,16 @@ fs(size, weight = 400)
   font-weight weight
 
 icon(icon, iconColor)
+  svg('icons/' + icon + '-' + iconColor)
   background-position center
   background-repeat no-repeat
   content ''
   display block
-  svg('icons/' + icon + '-' + iconColor)
 
 img(value)
-  background-image src('./src/images/' + value)
+  background-image url('/dist/images/' + value)
+  background-repeat no-repeat
+  background-position center
 
 svg(value)
   background-image inline('./src/images/' + value + '.svg')
@@ -49,9 +51,9 @@ unhideText()
   white-space normal
 
 hide()
+  wh(1px)
   border 0
   clip rect(0, 0, 0, 0)
-  wh(1px)
   margin -1px
   overflow hidden
   padding 0

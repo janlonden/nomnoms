@@ -24,3 +24,20 @@
     opacity 1
     transform translateY(-50%) rotate(0)
     visibility visible
+
+.magnifying-glass
+  svg('/icons/magnifying-glass-dark')
+  wh(28px)
+  background-position center
+  background-repeat no-repeat
+  position absolute
+  left 50%
+  top @left
+  transform translate(-50%, -50%)
+  z-index -1
+  transition opacity .8s ease .6s, visibility .8s ease .6s
+
+:global .magnifying-glass-hidden
+  transition opacity .2s ease, visibility .2s ease
+  opacity 0
+  visibility hidden
