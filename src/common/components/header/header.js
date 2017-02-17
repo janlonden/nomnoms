@@ -100,7 +100,7 @@ Header.propTypes = {
   nav: PropTypes.object.isRequired,
   pathname: PropTypes.string.isRequired,
   query: PropTypes.string.isRequired,
-  user: PropTypes.object.isRequired,
+  user: PropTypes.object.isRequired
 }
 
 const stateToProps = state => ({

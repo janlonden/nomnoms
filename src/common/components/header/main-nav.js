@@ -15,8 +15,8 @@ const MainNav = ({nav, setResponsiveNavActive}) =>
 
 MainNav.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  setResponsiveNavActive: PropTypes.func.isRequired,
-  nav: PropTypes.object.isRequired
+  nav: PropTypes.object.isRequired,
+  setResponsiveNavActive: PropTypes.func.isRequired
 }
 
 export default CSSModules(MainNav, styles, {allowMultiple: true})

@@ -41,9 +41,9 @@ const PhotoUpload = ({
 
     payload.append('photo', photo)
 
-    dispatch(`set_${newOrUpdate}_${what}_uploading`, true)
-
     const section = what === 'recipe' ? 'recipes' : 'users'
+
+    dispatch(`set_${newOrUpdate}_${what}_uploading`, true)
 
     req.post(`https://londen.se/nomnoms/photos/${section}/upload.php`, payload)
       .then(res => {

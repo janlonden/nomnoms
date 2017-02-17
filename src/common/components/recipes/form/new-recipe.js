@@ -11,7 +11,7 @@ NewRecipe.propTypes = {
   dispatch: PropTypes.func.isRequired,
   newRecipe: PropTypes.object.isRequired,
   request: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired,
+  user: PropTypes.object.isRequired
 }
 
 export default CSSModules(NewRecipe, styles, {allowMultiple: true})

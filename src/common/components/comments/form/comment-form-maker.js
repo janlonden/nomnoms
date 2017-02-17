@@ -1,7 +1,7 @@
 import React from 'react'
 import striptags from 'striptags'
 
-import sanitize from '../../../functions/sanitize'
+import sanitize from 'common/functions/sanitize'
 
 import Quill from 'common/components/forms/quill'
 
@@ -47,9 +47,9 @@ const commentFormMaker = what => ({
       authorId
     }
 
-    dispatch(`set_${what}_comment_requesting`, true)
-
     const commentPayload = isUpdate ? updateCommentPayload : newCommentPayload
+
+    dispatch(`set_${what}_comment_requesting`, true)
 
     request(handler, commentPayload)
       .then(({status, payload}) => {

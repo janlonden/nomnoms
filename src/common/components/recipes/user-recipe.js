@@ -1,10 +1,10 @@
 import {Link} from 'react-router'
 import React from 'react'
 
+import date from 'common/functions/date'
+
 import Photo from 'common/components/photo/photo'
 import Likes from 'common/components/recipes/likes'
-
-import date from 'common/functions/date'
 
 const userRecipe = (recipe, index, setInput) =>
   <article key={index} styleName="box recipe">
