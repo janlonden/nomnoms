@@ -22,6 +22,7 @@ import newRecipe from './recipes/new-recipe'
 import newUser from './users/auth/new-user'
 import removeComment from './comments/remove-comment'
 import removeRecipe from './recipes/remove-recipe'
+import resetPassword from './users/reset-password'
 import updateComment from './comments/update-comment'
 import updateRecipe from './recipes/update-recipe'
 import updateUser from './users/update-user'
@@ -39,6 +40,7 @@ const handlers = {
   newUser,
   removeComment,
   removeRecipe,
+  resetPassword,
   updateComment,
   updateRecipe,
   updateUser

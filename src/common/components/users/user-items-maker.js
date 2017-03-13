@@ -41,6 +41,21 @@ const userItemsMaker = what => {
       event.preventDefault()
     }
 
+    const resetPassword = event => {
+      event.preventDefault()
+
+      const id = event.target.querySelector('input').value
+
+      request('resetPassword', {_id: id})
+        .then(({status, payload}) => {
+          console.log(payload)
+        })
+
+        .catch(err => {
+          console.log(err)
+        })
+    }
+
     let timeout
 
     const openSortNav = () => {
@@ -309,6 +324,20 @@ const userItemsMaker = what => {
             >
               <span>Visa fler</span>
             </a>
+          </div>
+        }
+
+        {user.email === 'jjlonden@gmail.com' &&
+          <div styleName="box">
+            <form onSubmit={resetPassword}>
+              <input
+                name="id"
+                placeholder="id"
+                type="text"
+              />
+
+              <button>reset password</button>
+            </form>
           </div>
         }
       </section>
