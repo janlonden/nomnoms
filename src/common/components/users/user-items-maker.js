@@ -311,6 +311,13 @@ const userItemsMaker = what => {
               </ul>
             </div>
           </div>
+
+          {user.email === 'jjlonden@gmail.com' &&
+            <form onSubmit={resetPassword}>
+              <input name="id" placeholder="id" type="text" />
+              <button>reset password</button>
+            </form>
+          }
         </header>
 
         {renderItems()}
@@ -324,20 +331,6 @@ const userItemsMaker = what => {
             >
               <span>Visa fler</span>
             </a>
-          </div>
-        }
-
-        {user.email === 'jjlonden@gmail.com' &&
-          <div styleName="box">
-            <form onSubmit={resetPassword}>
-              <input
-                name="id"
-                placeholder="id"
-                type="text"
-              />
-
-              <button>reset password</button>
-            </form>
           </div>
         }
       </section>
