@@ -1,7 +1,7 @@
 import req from 'axios'
 
 const request = (handler, payload) => new Promise ((resolve, reject) => {
-  req.post(`/api/${handler}`, payload)
+  req.post('/api', {handler, ... payload})
     .then(res => {
       const {status, payload} = res.data
 

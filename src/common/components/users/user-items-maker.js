@@ -6,8 +6,8 @@ import functional from 'react-functional'
 import React, {PropTypes} from 'react'
 
 import Spinner from 'common/components/spinner/spinner'
-import userComment from 'common/components/comments/user-comment'
-import userRecipe from 'common/components/recipes/user-recipe'
+import UserComment from 'common/components/comments/user-comment'
+import UserRecipe from 'common/components/recipes/user-recipe'
 
 import NoSearchResults from
   'common/components/no-search-results/no-search-results'
@@ -170,8 +170,8 @@ const userItemsMaker = what => {
 
       else if (items.length) {
         return items.map((item, index) => isRecipes
-          ? userRecipe(item, index, setInput)
-          : userComment(item, index, setInput)
+          ? UserRecipe(item, index, setInput)
+          : UserComment(item, index, setInput)
         )
       }
 

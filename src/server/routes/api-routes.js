@@ -48,7 +48,7 @@ const handlers = {
 
 const apiRoutes = (req, res, next) => {
   const authenticated = req.isAuthenticated()
-  const handler = handlers[req.path.substring(1)]
+  const handler = handlers[req.body.handler]
   const userId = authenticated ? String(req.user._id) : undefined
   const error = responseMaker(res, 'error')
   const success = responseMaker(res, 'success')

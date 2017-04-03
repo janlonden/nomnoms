@@ -6,7 +6,7 @@ import date from 'common/functions/date'
 import Photo from 'common/components/photo/photo'
 import Likes from 'common/components/recipes/likes'
 
-const userRecipe = (recipe, index, setInput) =>
+const UserRecipe = (recipe, index, setInput) =>
   <article key={index} styleName="box recipe">
     <div styleName="photo">
       <Photo photo={recipe.photo} what="recipe" />
@@ -72,4 +72,4 @@ const userRecipe = (recipe, index, setInput) =>
     </div>
   </article>
 
-export default userRecipe
+export default UserRecipe

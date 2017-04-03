@@ -4,7 +4,7 @@ import striptags from 'striptags'
 
 import date from 'common/functions/date'
 
-const userComment = (comment, index, setInput) =>
+const UserComment = (comment, index, setInput) =>
   <article key={index} styleName="box comment">
     <p styleName="text">
       {striptags(comment.text).length > 80
@@ -44,4 +44,4 @@ const userComment = (comment, index, setInput) =>
     </ul>
   </article>
 
-export default userComment
+export default UserComment

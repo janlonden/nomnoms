@@ -56,7 +56,9 @@ const PhotoUpload = ({
 
         dispatch(
           `set_${newOrUpdate}_${what}_photo_error`,
-          'Fotot kunde inte laddas upp. Försök igen senare.'
+          'Fotot kunde inte laddas upp. ' +
+          'För att ladda upp bilder måste du använda ' +
+          'säkra versionen av nomnoms: https://nomnoms.herokuapp.com/'
         )
       })
   }
